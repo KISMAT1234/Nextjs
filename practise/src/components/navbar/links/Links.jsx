@@ -1,3 +1,4 @@
+
 import Link from "next/link"
 import NavLink from "./navLink/navLink" 
 const Links = () => {
@@ -21,7 +22,8 @@ const Links = () => {
         },
     ];
 
-    const session = true
+ 
+    const session = false
     const isAdmin = true
 
     return (
