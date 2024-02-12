@@ -1,4 +1,5 @@
 import Link from "next/link"
+import NavLink from "./navLink/navLink" 
 const Links = () => {
 
     const links = [
@@ -18,14 +19,28 @@ const Links = () => {
             title:"Blog",
             path:"/blog",
         },
-    ]
+    ];
+
+    const session = true
+    const isAdmin = true
 
     return (
         <>
            <div>
                  {links.map((link =>(
-                    <Link href={link.path} key={link.title}>{link.title}</Link>
-                 )))}
+                    <Link href={link.path} key={link.title} className="ml-10">{link.title}</Link>
+                 )))}{
+                    session ? (
+                        <>
+                        {
+                            isAdmin &&  <NavLink item = {{title: "Admin", path:"/admin"}}/>
+                        }
+                        <button>Logout</button>
+                        </>
+                    ) : (
+                        <NavLink item = {{title: "Login", path:"/login"}}/>
+                    )
+                 }
            </div>
         </>
     )

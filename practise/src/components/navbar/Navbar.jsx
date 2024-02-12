@@ -2,7 +2,7 @@ import Links from "./links/Links"
 const Navbar = () =>{
     return (
         <>
-           <div>
+           <div className="flex justify-around">
                <div>Logo</div>
                <div>
                      <Links/>
