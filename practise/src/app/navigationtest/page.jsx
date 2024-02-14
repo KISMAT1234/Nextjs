@@ -1,14 +1,25 @@
 "use client"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname, useSearchParams } from "next/navigation"
 
 
 const NavigationTestPage = () =>{
+
+
+    // CLIENT SIDE NAVIGATION
     const router =useRouter()
+    const pathname = usePathname()
+    const searchParams = useSearchParams()
+     
+    const kismat = searchParams.get("kismat")
+
+    console.log(kismat);
 
     const handleClick = () =>{
         console.log("clicked")
-        router.push("/")
+        // router.push("/")
+        // router.replace("/")
+         router.refresh()
 
     }
 
@@ -16,7 +27,7 @@ const NavigationTestPage = () =>{
         <>
          {/* <h1>NavigationTestPage </h1> */}
          <Link href="/">Click here</Link>
-         <buttton onClick={handleClick}>Write and Redirect</buttton>
+         <button onClick={handleClick}>Write and Redirect</button>
         </>
     )
     }

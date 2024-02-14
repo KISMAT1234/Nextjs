@@ -23,7 +23,7 @@ const Links = () => {
     ];
 
  
-    const session = false
+    const session = true
     const isAdmin = true
 
     return (
