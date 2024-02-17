@@ -9,8 +9,7 @@ const getData = async ()=>{
 }
 
 const blogPage = () =>{
-
-    const posts = await getData();
+    const posts = getData();
     return (
         <>
          <h1>blogPage </h1>
