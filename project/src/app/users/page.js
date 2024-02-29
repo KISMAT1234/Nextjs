@@ -12,7 +12,7 @@ export default async function Page(){
     return(
         <>
 
-         <h1>User List</h1>
+         <h1>User List and  Profile</h1> 
          {
             users.map((data)=>(
            <Link href={`users/${data.id}`}>{data.name}</Link>
