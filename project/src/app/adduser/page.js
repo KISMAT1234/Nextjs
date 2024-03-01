@@ -6,9 +6,19 @@ export default function Page(){
     const [email, setEmail] = useState("");
 
     const addUser = async() => {
-        // let response = await fetch()
         console.log({name, age, email})
-
+        let response = await fetch("http://localhost:3000/api/users",{
+            method:"Post",
+            body:JSON.stringify({name, age, email}),
+        });
+       response = await  response.json();
+       if(response.success){
+        alert("New user added")
+       }else{
+        alert("some error")
+       }
+       console.log(response)
+ 
     }
     return(
         <>
