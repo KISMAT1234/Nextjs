@@ -15,9 +15,13 @@ export function GET(request,content){
 
 export async function PUT(request, content){
     let payload =await request.json()
-
+     
     payload.id = content.params.id;
-    console.log(payload);
+    if(!payload.name || !payload.age || !payload.email)     
+    {
+        return NextResponse.json({result:"not valid"});
+    }
 
-    return NextResponse.json({result:true});
+    return NextResponse.json({result:payload,success:true},{status:200});
+
 }
