@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
         type:String,
         unique:true
     },
-    isVerifies:{
+    isVerified:{
         type:Boolean,
         default:false
     },
