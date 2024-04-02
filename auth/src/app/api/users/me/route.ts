@@ -10,6 +10,7 @@ connect()
 export async function POST(request: NextRequest){
     const userId= await getDataFromToken(request)
     const user = await User.findOne({_id : userId})
+    console.log(user);
 
     return NextResponse.json({
         message:"User found",
